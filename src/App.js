@@ -21,12 +21,11 @@ class App extends React.Component {
             <div className={'pages'}>
                 <Switch>
                     <Route path={RoutersList.HOME} >
-                        <Home/>
+                     <Home/>
                     </Route>
                     <Route path={RoutersList.CONTACT_US} ><ContactUs/></Route>
                     <Route path={RoutersList.SERVICES} ><Services/></Route>
                     <Route path={RoutersList.ERROR} ><Error/></Route>
-
                     <Redirect to={'/error'}/>
                 </Switch>
             </div>
