@@ -7,6 +7,7 @@ import {Contact} from "./pages/Contact";
 import {routerList} from "./routers/routers";
 import {ProductDetails} from "./pages/ProductDetails";
 import {ServicesContact} from "./pages/ServicesContact";
+import {InputForms} from "./pages/InputForms/InputForms";
 
 function App() {
 
@@ -32,6 +33,8 @@ function App() {
                 </li>
                 <li>
                     <NavLink to={'/contact'}>Contacts</NavLink>
+                </li> <li>
+                    <NavLink to={'/input-form'}>Inputs</NavLink>
                 </li>
 
             </ul>
@@ -44,7 +47,8 @@ function App() {
             <Route path={'/contact'} element={<Contact/>}/>
             <Route path={routerList.PRODUCT_DETAILS} element={<ProductDetails/>}/>
             <Route path={'/services/contact'} element={<ServicesContact/>}/>
-            <Route path={'/*'} element={<Navigate to={'/'}/>}></Route>
+            <Route path={'/input-form'} element={<InputForms/>}/>
+            <Route path={'/*'} element={<Navigate to={'/services'}/>}></Route>
         </Routes>
     </div>
 

@@ -1,7 +1,6 @@
 @import "./variables";
 
 
-
 @mixin screen-max-width-1200 {
   @media (max-width: $max-width-1200) {
     @content;
@@ -27,9 +26,9 @@
 }
 
 
-
 $sizes: 10;
 $paddingSize: 10;
+$width: 10;
 
 @while $sizes <= 100 {
   .gap-#{$sizes} {
@@ -37,6 +36,15 @@ $paddingSize: 10;
   }
   $sizes: $sizes + 1;
 }
+
+@while $width <= 2000 {
+  .width-#{$width} {
+    width: 100%;
+    max-width: #{$width}px;
+  }
+  $width: $width + 1;
+}
+
 
 @while $paddingSize <= 100 {
   .padding-#{$paddingSize} {
