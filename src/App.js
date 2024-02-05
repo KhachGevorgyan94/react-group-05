@@ -1,5 +1,6 @@
 import './App.css'
 import {useEffect} from "react";
+import './platform/config'
 import {Navigate, NavLink, Route, Routes, useLocation} from "react-router-dom";
 import {Home} from "./pages/Home";
 import {Services} from "./pages/Services";
@@ -36,11 +37,8 @@ function App() {
                 </li> <li>
                     <NavLink to={'/input-form'}>Inputs</NavLink>
                 </li>
-
             </ul>
         </header>
-
-
         <Routes>
             <Route path={'/'} element={<Home/>}/>
             <Route path={'/services'} element={<Services/>}/>
