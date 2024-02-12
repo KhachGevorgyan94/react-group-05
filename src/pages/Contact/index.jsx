@@ -70,3 +70,14 @@ function ToDoCard({item}) {
         <p>{item.title}</p>
     </div>
 }
+
+// CRUD
+
+// Create
+// Review
+// Update
+// Delete
+
+
+
+

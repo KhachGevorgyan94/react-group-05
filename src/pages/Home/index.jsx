@@ -1,25 +1,53 @@
 import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
+import {UserForm} from "../../components/UserForm";
+import axios from "axios";
+import {BaseURL} from "../../routers/routers";
 
 export const Home = () => {
-    const [isLoading, setIsLoading] = useState(false)
-    // useNavigate  da  hook e  vor@ patasxanatu e eji popoxman clicki jamanak
-    const navigate = useNavigate()
-    let x = useParams()
+    const [usersList, setUsersList] = useState([]);
+    const [selectedUser, setSelectedUser] = useState(null)
+
+    const getUsersList = async () => {
+        const response = await axios.get(`${BaseURL}/usersKhach`);
+        if (response.data) {
+            setUsersList(response.data);
+        }
+    };
 
     useEffect(() => {
-        console.log(x)
+        getUsersList();
     }, []);
-    const handleCLick = () => {
-        setIsLoading(true)
-        setTimeout(() => {
-            navigate('/services')
-        }, 3000)
+
+
+    const handleDeleteUser = async (id) => {
+        const result = await axios.delete(`${BaseURL}/usersKhach/${id}`)
+        getUsersList()
     }
+
+
     return <div>
-        <h1>Home</h1>
-        <button onClick={handleCLick}>{isLoading ? 'loading....' : 'click'}</button>
-        <div style={{backgroundColor:'blue',height:'1000px'}}></div>
+        <h1>Users Page</h1>
+        <UserForm userData={selectedUser} updateList={getUsersList}/>
+
+        <div className={'users-list'}>
+            {usersList.map((item, index) => {
+                return <div className={'box'} key={'users' + index}>
+                    <p>{item.firstName}</p>
+                    <p>{item.lastName}</p>
+                    <p>{item.email}</p>
+                    <button onClick={()=>{
+                        setSelectedUser(item)
+                    }}>Edit</button>
+                    <br/>
+                    <button onClick={() => {
+                        handleDeleteUser(item._id)
+                    }}>Delete
+                    </button>
+                </div>
+            })}
+        </div>
+
 
     </div>
 }

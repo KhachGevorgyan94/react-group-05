@@ -41,3 +41,11 @@
 .active{
   color: #E24949;
 }
+
+.box{
+  display: inline-block;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.4);
+  padding: 10px;
+}

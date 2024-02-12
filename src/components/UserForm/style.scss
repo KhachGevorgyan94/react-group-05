@@ -1,0 +1,47 @@
+.input-block {
+
+}
+
+.user-form-container {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+
+
+}
+
+.input-block {
+  width: calc(50% - 10px);
+
+  label {
+    width: 100%;
+    display: block;
+
+    input {
+      width: 100%;
+      padding: 0 10px;
+      border: 1px solid gray;
+      border-radius: 8px;
+      height: 36px;
+    }
+  }
+}
+
+.G-w-100 {
+  width: 100%;
+}
+
+.confirm-button {
+  width: 100%;
+
+  button {
+    width: 100%;
+    height: 40px;
+    background-color: #61dafb;
+    color: black;
+    border-radius: 12px;
+  }
+}

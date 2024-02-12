@@ -21,24 +21,24 @@ function App() {
     }, [location.pathname]);
 
     return <div>
-        <header>
-            <ul>
-                <li>
-                    <NavLink to={'/'}>Home</NavLink>
-                </li>
-                <li>
-                    <NavLink to={'/services'}>Services</NavLink>
-                </li>
-                <li>
-                    <NavLink to={'/services/contact'}>Services Contact</NavLink>
-                </li>
-                <li>
-                    <NavLink to={'/contact'}>Contacts</NavLink>
-                </li> <li>
-                    <NavLink to={'/input-form'}>Inputs</NavLink>
-                </li>
-            </ul>
-        </header>
+        {/*<header>*/}
+        {/*    <ul>*/}
+        {/*        <li>*/}
+        {/*            <NavLink to={'/'}>Home</NavLink>*/}
+        {/*        </li>*/}
+        {/*        <li>*/}
+        {/*            <NavLink to={'/services'}>Services</NavLink>*/}
+        {/*        </li>*/}
+        {/*        <li>*/}
+        {/*            <NavLink to={'/services/contact'}>Services Contact</NavLink>*/}
+        {/*        </li>*/}
+        {/*        <li>*/}
+        {/*            <NavLink to={'/contact'}>Contacts</NavLink>*/}
+        {/*        </li> <li>*/}
+        {/*            <NavLink to={'/input-form'}>Inputs</NavLink>*/}
+        {/*        </li>*/}
+        {/*    </ul>*/}
+        {/*</header>*/}
         <Routes>
             <Route path={'/'} element={<Home/>}/>
             <Route path={'/services'} element={<Services/>}/>
